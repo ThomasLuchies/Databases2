@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="54285a2c38bc48e2aa711850663eb438" Name="Diagram1">
+        <EntityTypeShape EntityType="netflixModel.abbonementen" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.afleveringen" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.films" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.gebruikers" Width="1.5" PointX="1.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.genres_voorkeuren" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.kijk_histories" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.kijklijst_items" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.profielen" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.seizoenen" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.series" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.voorkeuren" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.abbonementen_kwaliteiten" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.afleveringen_kwaliteiten" Width="1.5" PointX="12" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.afleveringen_ondertitelingen" Width="1.5" PointX="12" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.films_genres" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.films_kijkwijzer_indicaties" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.films_kwaliteiten" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.films_ondertitelingen" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.gebruikers_abbonementen" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.series_genres" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.series_kijkwijzer_indicaties" Width="1.5" PointX="7.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.voorkeuren_kijkwijzer_indicaties" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <AssociationConnector Association="netflixModel.FK__abbonemen__abbon__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__gebruiker__abbon__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__afleverin__aflev__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__afleverin__aflev__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__afleverin__seizo__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__afleverin__volge__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__films_gen__film___5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__films_kij__film___4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__films_kwa__film___5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__films_ond__film___5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__gebruiker__gebru__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__profielen__gebru__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__genres_vo__voork__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__kijk_hist__profi__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__kijklijst__profi__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__voorkeure__profi__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__seizoenen__serie__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__series_ge__serie__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__series_ki__serie__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.FK__voorkeure__voork__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.films_kijk_histories" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.films_kijklijst_items" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.series_kijk_histories" ManuallyRouted="false" />
+        <AssociationConnector Association="netflixModel.series_kijklijst_items" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

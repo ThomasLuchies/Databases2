@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="netflixModelStoreContainer" CdmEntityContainer="netflixEntities">
+    <EntitySetMapping Name="abbonementen">
+      <EntityTypeMapping TypeName="netflixModel.abbonementen">
+        <MappingFragment StoreEntitySet="abbonementen">
+          <ScalarProperty Name="abbonement_id" ColumnName="abbonement_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="prijs_in_centen" ColumnName="prijs_in_centen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="afleveringen">
+      <EntityTypeMapping TypeName="netflixModel.afleveringen">
+        <MappingFragment StoreEntitySet="afleveringen">
+          <ScalarProperty Name="aflevering_id" ColumnName="aflevering_id" />
+          <ScalarProperty Name="seizoen_id" ColumnName="seizoen_id" />
+          <ScalarProperty Name="volgende_aflevering_id" ColumnName="volgende_aflevering_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="tijdsduur_in_seconden" ColumnName="tijdsduur_in_seconden" />
+          <ScalarProperty Name="aftiteling_tijdstip_in_seconden" ColumnName="aftiteling_tijdstip_in_seconden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="films">
+      <EntityTypeMapping TypeName="netflixModel.films">
+        <MappingFragment StoreEntitySet="films">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="tijdsduur_in_seconden" ColumnName="tijdsduur_in_seconden" />
+          <ScalarProperty Name="aftiteling_tijdstip_in_seconden" ColumnName="aftiteling_tijdstip_in_seconden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gebruikers">
+      <EntityTypeMapping TypeName="netflixModel.gebruikers">
+        <MappingFragment StoreEntitySet="gebruikers">
+          <ScalarProperty Name="gebruiker_id" ColumnName="gebruiker_id" />
+          <ScalarProperty Name="emailadres" ColumnName="emailadres" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="actief" ColumnName="actief" />
+          <ScalarProperty Name="geblokkeerd" ColumnName="geblokkeerd" />
+          <ScalarProperty Name="geblokkeerd_tot" ColumnName="geblokkeerd_tot" />
+          <ScalarProperty Name="foutieve_inlogpogingen" ColumnName="foutieve_inlogpogingen" />
+          <ScalarProperty Name="reset_token" ColumnName="reset_token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genres_voorkeuren">
+      <EntityTypeMapping TypeName="netflixModel.genres_voorkeuren">
+        <MappingFragment StoreEntitySet="genres_voorkeuren">
+          <ScalarProperty Name="genre_voorkeur_id" ColumnName="genre_voorkeur_id" />
+          <ScalarProperty Name="voorkeur_id" ColumnName="voorkeur_id" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kijk_histories">
+      <EntityTypeMapping TypeName="netflixModel.kijk_histories">
+        <MappingFragment StoreEntitySet="kijk_histories">
+          <ScalarProperty Name="kijk_historie_id" ColumnName="kijk_historie_id" />
+          <ScalarProperty Name="profiel_id" ColumnName="profiel_id" />
+          <ScalarProperty Name="tijdstip_in_seconden" ColumnName="tijdstip_in_seconden" />
+          <ScalarProperty Name="gekeken_op" ColumnName="gekeken_op" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kijklijst_items">
+      <EntityTypeMapping TypeName="netflixModel.kijklijst_items">
+        <MappingFragment StoreEntitySet="kijklijst_items">
+          <ScalarProperty Name="kijklijst_item_id" ColumnName="kijklijst_item_id" />
+          <ScalarProperty Name="profiel_id" ColumnName="profiel_id" />
+          <ScalarProperty Name="gekeken" ColumnName="gekeken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profielen">
+      <EntityTypeMapping TypeName="netflixModel.profielen">
+        <MappingFragment StoreEntitySet="profielen">
+          <ScalarProperty Name="profiel_id" ColumnName="profiel_id" />
+          <ScalarProperty Name="gebruiker_id" ColumnName="gebruiker_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="profiel_foto_locatie" ColumnName="profiel_foto_locatie" />
+          <ScalarProperty Name="geboorte_datum" ColumnName="geboorte_datum" />
+          <ScalarProperty Name="taal" ColumnName="taal" />
+          <ScalarProperty Name="ondertiteling" ColumnName="ondertiteling" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seizoenen">
+      <EntityTypeMapping TypeName="netflixModel.seizoenen">
+        <MappingFragment StoreEntitySet="seizoenen">
+          <ScalarProperty Name="seizoen_id" ColumnName="seizoen_id" />
+          <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series">
+      <EntityTypeMapping TypeName="netflixModel.series">
+        <MappingFragment StoreEntitySet="series">
+          <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voorkeuren">
+      <EntityTypeMapping TypeName="netflixModel.voorkeuren">
+        <MappingFragment StoreEntitySet="voorkeuren">
+          <ScalarProperty Name="voorkeur_id" ColumnName="voorkeur_id" />
+          <ScalarProperty Name="profiel_id" ColumnName="profiel_id" />
+          <ScalarProperty Name="film_interesse" ColumnName="film_interesse" />
+          <ScalarProperty Name="serie_interesse" ColumnName="serie_interesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="abbonementen_kwaliteiten">
+      <EntityTypeMapping TypeName="netflixModel.abbonementen_kwaliteiten">
+        <MappingFragment StoreEntitySet="abbonementen_kwaliteiten">
+          <ScalarProperty Name="abbonement_id" ColumnName="abbonement_id" />
+          <ScalarProperty Name="kwaliteit" ColumnName="kwaliteit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="afleveringen_kwaliteiten">
+      <EntityTypeMapping TypeName="netflixModel.afleveringen_kwaliteiten">
+        <MappingFragment StoreEntitySet="afleveringen_kwaliteiten">
+          <ScalarProperty Name="aflevering_id" ColumnName="aflevering_id" />
+          <ScalarProperty Name="kwaliteit" ColumnName="kwaliteit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="afleveringen_ondertitelingen">
+      <EntityTypeMapping TypeName="netflixModel.afleveringen_ondertitelingen">
+        <MappingFragment StoreEntitySet="afleveringen_ondertitelingen">
+          <ScalarProperty Name="aflevering_id" ColumnName="aflevering_id" />
+          <ScalarProperty Name="taal" ColumnName="taal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="films_genres">
+      <EntityTypeMapping TypeName="netflixModel.films_genres">
+        <MappingFragment StoreEntitySet="films_genres">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="films_kijkwijzer_indicaties">
+      <EntityTypeMapping TypeName="netflixModel.films_kijkwijzer_indicaties">
+        <MappingFragment StoreEntitySet="films_kijkwijzer_indicaties">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="indicatie" ColumnName="indicatie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="films_kwaliteiten">
+      <EntityTypeMapping TypeName="netflixModel.films_kwaliteiten">
+        <MappingFragment StoreEntitySet="films_kwaliteiten">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="kwaliteit" ColumnName="kwaliteit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="films_ondertitelingen">
+      <EntityTypeMapping TypeName="netflixModel.films_ondertitelingen">
+        <MappingFragment StoreEntitySet="films_ondertitelingen">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="taal" ColumnName="taal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gebruikers_abbonementen">
+      <EntityTypeMapping TypeName="netflixModel.gebruikers_abbonementen">
+        <MappingFragment StoreEntitySet="gebruikers_abbonementen">
+          <ScalarProperty Name="gebruiker_id" ColumnName="gebruiker_id" />
+          <ScalarProperty Name="abbonement_id" ColumnName="abbonement_id" />
+          <ScalarProperty Name="verloopt_op" ColumnName="verloopt_op" />
+          <ScalarProperty Name="korting_in_centen" ColumnName="korting_in_centen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series_genres">
+      <EntityTypeMapping TypeName="netflixModel.series_genres">
+        <MappingFragment StoreEntitySet="series_genres">
+          <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series_kijkwijzer_indicaties">
+      <EntityTypeMapping TypeName="netflixModel.series_kijkwijzer_indicaties">
+        <MappingFragment StoreEntitySet="series_kijkwijzer_indicaties">
+          <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+          <ScalarProperty Name="indicatie" ColumnName="indicatie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voorkeuren_kijkwijzer_indicaties">
+      <EntityTypeMapping TypeName="netflixModel.voorkeuren_kijkwijzer_indicaties">
+        <MappingFragment StoreEntitySet="voorkeuren_kijkwijzer_indicaties">
+          <ScalarProperty Name="voorkeur_id" ColumnName="voorkeur_id" />
+          <ScalarProperty Name="indicatie" ColumnName="indicatie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="films_kijk_histories" TypeName="netflixModel.films_kijk_histories" StoreEntitySet="films_kijk_histories">
+      <EndProperty Name="films">
+        <ScalarProperty Name="film_id" ColumnName="film_id" />
+      </EndProperty>
+      <EndProperty Name="kijk_histories">
+        <ScalarProperty Name="kijk_historie_id" ColumnName="kijk_historie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="films_kijklijst_items" TypeName="netflixModel.films_kijklijst_items" StoreEntitySet="films_kijklijst_items">
+      <EndProperty Name="films">
+        <ScalarProperty Name="film_id" ColumnName="film_id" />
+      </EndProperty>
+      <EndProperty Name="kijklijst_items">
+        <ScalarProperty Name="kijklijst_item_id" ColumnName="kijklijst_item_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="series_kijk_histories" TypeName="netflixModel.series_kijk_histories" StoreEntitySet="series_kijk_histories">
+      <EndProperty Name="afleveringen">
+        <ScalarProperty Name="aflevering_id" ColumnName="aflevering_id" />
+      </EndProperty>
+      <EndProperty Name="kijk_histories">
+        <ScalarProperty Name="kijk_historie_id" ColumnName="kijk_historie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="series_kijklijst_items" TypeName="netflixModel.series_kijklijst_items" StoreEntitySet="series_kijklijst_items">
+      <EndProperty Name="kijklijst_items">
+        <ScalarProperty Name="kijklijst_item_id" ColumnName="kijklijst_item_id" />
+      </EndProperty>
+      <EndProperty Name="series">
+        <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

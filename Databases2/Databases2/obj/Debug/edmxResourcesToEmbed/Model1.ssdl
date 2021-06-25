@@ -1,0 +1,812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="netflixModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="abbonementen">
+    <Key>
+      <PropertyRef Name="abbonement_id" />
+    </Key>
+    <Property Name="abbonement_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="prijs_in_centen" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.abbonementen_kwaliteiten' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="abbonementen_kwaliteiten">
+    <Key>
+      <PropertyRef Name="abbonement_id" />
+      <PropertyRef Name="kwaliteit" />
+    </Key>
+    <Property Name="abbonement_id" Type="int" Nullable="false" />
+    <Property Name="kwaliteit" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="afleveringen">
+    <Key>
+      <PropertyRef Name="aflevering_id" />
+    </Key>
+    <Property Name="aflevering_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seizoen_id" Type="int" Nullable="false" />
+    <Property Name="volgende_aflevering_id" Type="int" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tijdsduur_in_seconden" Type="int" Nullable="false" />
+    <Property Name="aftiteling_tijdstip_in_seconden" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.afleveringen_kwaliteiten' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="afleveringen_kwaliteiten">
+    <Key>
+      <PropertyRef Name="aflevering_id" />
+      <PropertyRef Name="kwaliteit" />
+    </Key>
+    <Property Name="aflevering_id" Type="int" Nullable="false" />
+    <Property Name="kwaliteit" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.afleveringen_ondertitelingen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="afleveringen_ondertitelingen">
+    <Key>
+      <PropertyRef Name="aflevering_id" />
+      <PropertyRef Name="taal" />
+    </Key>
+    <Property Name="aflevering_id" Type="int" Nullable="false" />
+    <Property Name="taal" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="films">
+    <Key>
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="film_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tijdsduur_in_seconden" Type="int" Nullable="false" />
+    <Property Name="aftiteling_tijdstip_in_seconden" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_genres' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_genres">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="genre" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="genre" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_kijk_histories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_kijk_histories">
+    <Key>
+      <PropertyRef Name="kijk_historie_id" />
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="kijk_historie_id" Type="int" Nullable="false" />
+    <Property Name="film_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_kijklijst_items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_kijklijst_items">
+    <Key>
+      <PropertyRef Name="kijklijst_item_id" />
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="kijklijst_item_id" Type="int" Nullable="false" />
+    <Property Name="film_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_kijkwijzer_indicaties' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_kijkwijzer_indicaties">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="indicatie" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="indicatie" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_kwaliteiten' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_kwaliteiten">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="kwaliteit" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="kwaliteit" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.films_ondertitelingen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="films_ondertitelingen">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="taal" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="taal" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gebruikers">
+    <Key>
+      <PropertyRef Name="gebruiker_id" />
+    </Key>
+    <Property Name="gebruiker_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emailadres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="wachtwoord" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="actief" Type="bit" Nullable="false" />
+    <Property Name="geblokkeerd" Type="bit" Nullable="false" />
+    <Property Name="geblokkeerd_tot" Type="datetime" Nullable="false" />
+    <Property Name="foutieve_inlogpogingen" Type="smallint" Nullable="false" />
+    <Property Name="reset_token" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.gebruikers_abbonementen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="gebruikers_abbonementen">
+    <Key>
+      <PropertyRef Name="gebruiker_id" />
+      <PropertyRef Name="abbonement_id" />
+      <PropertyRef Name="verloopt_op" />
+      <PropertyRef Name="korting_in_centen" />
+    </Key>
+    <Property Name="gebruiker_id" Type="int" Nullable="false" />
+    <Property Name="abbonement_id" Type="int" Nullable="false" />
+    <Property Name="verloopt_op" Type="datetime" Nullable="false" />
+    <Property Name="korting_in_centen" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="genres_voorkeuren">
+    <Key>
+      <PropertyRef Name="genre_voorkeur_id" />
+    </Key>
+    <Property Name="genre_voorkeur_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="voorkeur_id" Type="int" Nullable="false" />
+    <Property Name="genre" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kijk_histories">
+    <Key>
+      <PropertyRef Name="kijk_historie_id" />
+    </Key>
+    <Property Name="kijk_historie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profiel_id" Type="int" Nullable="false" />
+    <Property Name="tijdstip_in_seconden" Type="int" Nullable="false" />
+    <Property Name="gekeken_op" Type="date" />
+  </EntityType>
+  <EntityType Name="kijklijst_items">
+    <Key>
+      <PropertyRef Name="kijklijst_item_id" />
+    </Key>
+    <Property Name="kijklijst_item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profiel_id" Type="int" Nullable="false" />
+    <Property Name="gekeken" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="profielen">
+    <Key>
+      <PropertyRef Name="profiel_id" />
+    </Key>
+    <Property Name="profiel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gebruiker_id" Type="int" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="profiel_foto_locatie" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="geboorte_datum" Type="date" Nullable="false" />
+    <Property Name="taal" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ondertiteling" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="seizoenen">
+    <Key>
+      <PropertyRef Name="seizoen_id" />
+    </Key>
+    <Property Name="seizoen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serie_id" Type="int" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="series">
+    <Key>
+      <PropertyRef Name="serie_id" />
+    </Key>
+    <Property Name="serie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.series_genres' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="series_genres">
+    <Key>
+      <PropertyRef Name="serie_id" />
+      <PropertyRef Name="genre" />
+    </Key>
+    <Property Name="serie_id" Type="int" Nullable="false" />
+    <Property Name="genre" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.series_kijk_histories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="series_kijk_histories">
+    <Key>
+      <PropertyRef Name="kijk_historie_id" />
+      <PropertyRef Name="aflevering_id" />
+    </Key>
+    <Property Name="kijk_historie_id" Type="int" Nullable="false" />
+    <Property Name="aflevering_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.series_kijklijst_items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="series_kijklijst_items">
+    <Key>
+      <PropertyRef Name="kijklijst_item_id" />
+      <PropertyRef Name="serie_id" />
+    </Key>
+    <Property Name="kijklijst_item_id" Type="int" Nullable="false" />
+    <Property Name="serie_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.series_kijkwijzer_indicaties' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="series_kijkwijzer_indicaties">
+    <Key>
+      <PropertyRef Name="serie_id" />
+      <PropertyRef Name="indicatie" />
+    </Key>
+    <Property Name="serie_id" Type="int" Nullable="false" />
+    <Property Name="indicatie" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="voorkeuren">
+    <Key>
+      <PropertyRef Name="voorkeur_id" />
+    </Key>
+    <Property Name="voorkeur_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profiel_id" Type="int" Nullable="false" />
+    <Property Name="film_interesse" Type="bit" Nullable="false" />
+    <Property Name="serie_interesse" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'netflix.dbo.voorkeuren_kijkwijzer_indicaties' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="voorkeuren_kijkwijzer_indicaties">
+    <Key>
+      <PropertyRef Name="voorkeur_id" />
+      <PropertyRef Name="indicatie" />
+    </Key>
+    <Property Name="voorkeur_id" Type="int" Nullable="false" />
+    <Property Name="indicatie" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__abbonemen__abbon__29572725">
+    <End Role="abbonementen" Type="Self.abbonementen" Multiplicity="1" />
+    <End Role="abbonementen_kwaliteiten" Type="Self.abbonementen_kwaliteiten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="abbonementen">
+        <PropertyRef Name="abbonement_id" />
+      </Principal>
+      <Dependent Role="abbonementen_kwaliteiten">
+        <PropertyRef Name="abbonement_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__afleverin__aflev__59063A47">
+    <End Role="afleveringen" Type="Self.afleveringen" Multiplicity="1" />
+    <End Role="afleveringen_kwaliteiten" Type="Self.afleveringen_kwaliteiten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="afleveringen">
+        <PropertyRef Name="aflevering_id" />
+      </Principal>
+      <Dependent Role="afleveringen_kwaliteiten">
+        <PropertyRef Name="aflevering_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__afleverin__aflev__5EBF139D">
+    <End Role="afleveringen" Type="Self.afleveringen" Multiplicity="1" />
+    <End Role="afleveringen_ondertitelingen" Type="Self.afleveringen_ondertitelingen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="afleveringen">
+        <PropertyRef Name="aflevering_id" />
+      </Principal>
+      <Dependent Role="afleveringen_ondertitelingen">
+        <PropertyRef Name="aflevering_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__afleverin__seizo__35BCFE0A">
+    <End Role="seizoenen" Type="Self.seizoenen" Multiplicity="1" />
+    <End Role="afleveringen" Type="Self.afleveringen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="seizoenen">
+        <PropertyRef Name="seizoen_id" />
+      </Principal>
+      <Dependent Role="afleveringen">
+        <PropertyRef Name="seizoen_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__afleverin__volge__36B12243">
+    <End Role="afleveringen" Type="Self.afleveringen" Multiplicity="0..1" />
+    <End Role="afleveringen1" Type="Self.afleveringen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="afleveringen">
+        <PropertyRef Name="aflevering_id" />
+      </Principal>
+      <Dependent Role="afleveringen1">
+        <PropertyRef Name="volgende_aflevering_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_gen__film___5535A963">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_genres" Type="Self.films_genres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_genres">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kij__film___3C69FB99">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_kijk_histories" Type="Self.films_kijk_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_kijk_histories">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kij__film___47DBAE45">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_kijklijst_items" Type="Self.films_kijklijst_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_kijklijst_items">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kij__film___4E88ABD4">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_kijkwijzer_indicaties" Type="Self.films_kijkwijzer_indicaties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_kijkwijzer_indicaties">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kij__kijk___3B75D760">
+    <End Role="kijk_histories" Type="Self.kijk_histories" Multiplicity="1" />
+    <End Role="films_kijk_histories" Type="Self.films_kijk_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kijk_histories">
+        <PropertyRef Name="kijk_historie_id" />
+      </Principal>
+      <Dependent Role="films_kijk_histories">
+        <PropertyRef Name="kijk_historie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kij__kijkl__46E78A0C">
+    <End Role="kijklijst_items" Type="Self.kijklijst_items" Multiplicity="1" />
+    <End Role="films_kijklijst_items" Type="Self.films_kijklijst_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kijklijst_items">
+        <PropertyRef Name="kijklijst_item_id" />
+      </Principal>
+      <Dependent Role="films_kijklijst_items">
+        <PropertyRef Name="kijklijst_item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_kwa__film___5AEE82B9">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_kwaliteiten" Type="Self.films_kwaliteiten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_kwaliteiten">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__films_ond__film___5CD6CB2B">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_ondertitelingen" Type="Self.films_ondertitelingen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="films_ondertitelingen">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__gebruiker__abbon__276EDEB3">
+    <End Role="abbonementen" Type="Self.abbonementen" Multiplicity="1" />
+    <End Role="gebruikers_abbonementen" Type="Self.gebruikers_abbonementen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="abbonementen">
+        <PropertyRef Name="abbonement_id" />
+      </Principal>
+      <Dependent Role="gebruikers_abbonementen">
+        <PropertyRef Name="abbonement_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__gebruiker__gebru__267ABA7A">
+    <End Role="gebruikers" Type="Self.gebruikers" Multiplicity="1" />
+    <End Role="gebruikers_abbonementen" Type="Self.gebruikers_abbonementen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gebruikers">
+        <PropertyRef Name="gebruiker_id" />
+      </Principal>
+      <Dependent Role="gebruikers_abbonementen">
+        <PropertyRef Name="gebruiker_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__genres_vo__voork__534D60F1">
+    <End Role="voorkeuren" Type="Self.voorkeuren" Multiplicity="1" />
+    <End Role="genres_voorkeuren" Type="Self.genres_voorkeuren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="voorkeuren">
+        <PropertyRef Name="voorkeur_id" />
+      </Principal>
+      <Dependent Role="genres_voorkeuren">
+        <PropertyRef Name="voorkeur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__kijk_hist__profi__398D8EEE">
+    <End Role="profielen" Type="Self.profielen" Multiplicity="1" />
+    <End Role="kijk_histories" Type="Self.kijk_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="profielen">
+        <PropertyRef Name="profiel_id" />
+      </Principal>
+      <Dependent Role="kijk_histories">
+        <PropertyRef Name="profiel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__kijklijst__profi__4222D4EF">
+    <End Role="profielen" Type="Self.profielen" Multiplicity="1" />
+    <End Role="kijklijst_items" Type="Self.kijklijst_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="profielen">
+        <PropertyRef Name="profiel_id" />
+      </Principal>
+      <Dependent Role="kijklijst_items">
+        <PropertyRef Name="profiel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__profielen__gebru__2C3393D0">
+    <End Role="gebruikers" Type="Self.gebruikers" Multiplicity="1" />
+    <End Role="profielen" Type="Self.profielen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gebruikers">
+        <PropertyRef Name="gebruiker_id" />
+      </Principal>
+      <Dependent Role="profielen">
+        <PropertyRef Name="gebruiker_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__seizoenen__serie__32E0915F">
+    <End Role="series" Type="Self.series" Multiplicity="1" />
+    <End Role="seizoenen" Type="Self.seizoenen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="serie_id" />
+      </Principal>
+      <Dependent Role="seizoenen">
+        <PropertyRef Name="serie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ge__serie__571DF1D5">
+    <End Role="series" Type="Self.series" Multiplicity="1" />
+    <End Role="series_genres" Type="Self.series_genres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="serie_id" />
+      </Principal>
+      <Dependent Role="series_genres">
+        <PropertyRef Name="serie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ki__aflev__3F466844">
+    <End Role="afleveringen" Type="Self.afleveringen" Multiplicity="1" />
+    <End Role="series_kijk_histories" Type="Self.series_kijk_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="afleveringen">
+        <PropertyRef Name="aflevering_id" />
+      </Principal>
+      <Dependent Role="series_kijk_histories">
+        <PropertyRef Name="aflevering_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ki__kijk___3E52440B">
+    <End Role="kijk_histories" Type="Self.kijk_histories" Multiplicity="1" />
+    <End Role="series_kijk_histories" Type="Self.series_kijk_histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kijk_histories">
+        <PropertyRef Name="kijk_historie_id" />
+      </Principal>
+      <Dependent Role="series_kijk_histories">
+        <PropertyRef Name="kijk_historie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ki__kijkl__440B1D61">
+    <End Role="kijklijst_items" Type="Self.kijklijst_items" Multiplicity="1" />
+    <End Role="series_kijklijst_items" Type="Self.series_kijklijst_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kijklijst_items">
+        <PropertyRef Name="kijklijst_item_id" />
+      </Principal>
+      <Dependent Role="series_kijklijst_items">
+        <PropertyRef Name="kijklijst_item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ki__serie__44FF419A">
+    <End Role="series" Type="Self.series" Multiplicity="1" />
+    <End Role="series_kijklijst_items" Type="Self.series_kijklijst_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="serie_id" />
+      </Principal>
+      <Dependent Role="series_kijklijst_items">
+        <PropertyRef Name="serie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__series_ki__serie__5070F446">
+    <End Role="series" Type="Self.series" Multiplicity="1" />
+    <End Role="series_kijkwijzer_indicaties" Type="Self.series_kijkwijzer_indicaties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="series">
+        <PropertyRef Name="serie_id" />
+      </Principal>
+      <Dependent Role="series_kijkwijzer_indicaties">
+        <PropertyRef Name="serie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__voorkeure__profi__4AB81AF0">
+    <End Role="profielen" Type="Self.profielen" Multiplicity="1" />
+    <End Role="voorkeuren" Type="Self.voorkeuren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="profielen">
+        <PropertyRef Name="profiel_id" />
+      </Principal>
+      <Dependent Role="voorkeuren">
+        <PropertyRef Name="profiel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__voorkeure__voork__4CA06362">
+    <End Role="voorkeuren" Type="Self.voorkeuren" Multiplicity="1" />
+    <End Role="voorkeuren_kijkwijzer_indicaties" Type="Self.voorkeuren_kijkwijzer_indicaties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="voorkeuren">
+        <PropertyRef Name="voorkeur_id" />
+      </Principal>
+      <Dependent Role="voorkeuren_kijkwijzer_indicaties">
+        <PropertyRef Name="voorkeur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="netflixModelStoreContainer">
+    <EntitySet Name="abbonementen" EntityType="Self.abbonementen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="afleveringen" EntityType="Self.afleveringen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films" EntityType="Self.films" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gebruikers" EntityType="Self.gebruikers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="genres_voorkeuren" EntityType="Self.genres_voorkeuren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kijk_histories" EntityType="Self.kijk_histories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kijklijst_items" EntityType="Self.kijklijst_items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="profielen" EntityType="Self.profielen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="seizoenen" EntityType="Self.seizoenen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="series" EntityType="Self.series" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="voorkeuren" EntityType="Self.voorkeuren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="abbonementen_kwaliteiten" EntityType="Self.abbonementen_kwaliteiten" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [abbonementen_kwaliteiten].[abbonement_id] AS [abbonement_id], 
+    [abbonementen_kwaliteiten].[kwaliteit] AS [kwaliteit]
+    FROM [dbo].[abbonementen_kwaliteiten] AS [abbonementen_kwaliteiten]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="afleveringen_kwaliteiten" EntityType="Self.afleveringen_kwaliteiten" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [afleveringen_kwaliteiten].[aflevering_id] AS [aflevering_id], 
+    [afleveringen_kwaliteiten].[kwaliteit] AS [kwaliteit]
+    FROM [dbo].[afleveringen_kwaliteiten] AS [afleveringen_kwaliteiten]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="afleveringen_ondertitelingen" EntityType="Self.afleveringen_ondertitelingen" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [afleveringen_ondertitelingen].[aflevering_id] AS [aflevering_id], 
+    [afleveringen_ondertitelingen].[taal] AS [taal]
+    FROM [dbo].[afleveringen_ondertitelingen] AS [afleveringen_ondertitelingen]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_genres" EntityType="Self.films_genres" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_genres].[film_id] AS [film_id], 
+    [films_genres].[genre] AS [genre]
+    FROM [dbo].[films_genres] AS [films_genres]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_kijk_histories" EntityType="Self.films_kijk_histories" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_kijk_histories].[kijk_historie_id] AS [kijk_historie_id], 
+    [films_kijk_histories].[film_id] AS [film_id]
+    FROM [dbo].[films_kijk_histories] AS [films_kijk_histories]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_kijklijst_items" EntityType="Self.films_kijklijst_items" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_kijklijst_items].[kijklijst_item_id] AS [kijklijst_item_id], 
+    [films_kijklijst_items].[film_id] AS [film_id]
+    FROM [dbo].[films_kijklijst_items] AS [films_kijklijst_items]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_kijkwijzer_indicaties" EntityType="Self.films_kijkwijzer_indicaties" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_kijkwijzer_indicaties].[film_id] AS [film_id], 
+    [films_kijkwijzer_indicaties].[indicatie] AS [indicatie]
+    FROM [dbo].[films_kijkwijzer_indicaties] AS [films_kijkwijzer_indicaties]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_kwaliteiten" EntityType="Self.films_kwaliteiten" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_kwaliteiten].[film_id] AS [film_id], 
+    [films_kwaliteiten].[kwaliteit] AS [kwaliteit]
+    FROM [dbo].[films_kwaliteiten] AS [films_kwaliteiten]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="films_ondertitelingen" EntityType="Self.films_ondertitelingen" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [films_ondertitelingen].[film_id] AS [film_id], 
+    [films_ondertitelingen].[taal] AS [taal]
+    FROM [dbo].[films_ondertitelingen] AS [films_ondertitelingen]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="gebruikers_abbonementen" EntityType="Self.gebruikers_abbonementen" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [gebruikers_abbonementen].[gebruiker_id] AS [gebruiker_id], 
+    [gebruikers_abbonementen].[abbonement_id] AS [abbonement_id], 
+    [gebruikers_abbonementen].[verloopt_op] AS [verloopt_op], 
+    [gebruikers_abbonementen].[korting_in_centen] AS [korting_in_centen]
+    FROM [dbo].[gebruikers_abbonementen] AS [gebruikers_abbonementen]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="series_genres" EntityType="Self.series_genres" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [series_genres].[serie_id] AS [serie_id], 
+    [series_genres].[genre] AS [genre]
+    FROM [dbo].[series_genres] AS [series_genres]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="series_kijk_histories" EntityType="Self.series_kijk_histories" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [series_kijk_histories].[kijk_historie_id] AS [kijk_historie_id], 
+    [series_kijk_histories].[aflevering_id] AS [aflevering_id]
+    FROM [dbo].[series_kijk_histories] AS [series_kijk_histories]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="series_kijklijst_items" EntityType="Self.series_kijklijst_items" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [series_kijklijst_items].[kijklijst_item_id] AS [kijklijst_item_id], 
+    [series_kijklijst_items].[serie_id] AS [serie_id]
+    FROM [dbo].[series_kijklijst_items] AS [series_kijklijst_items]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="series_kijkwijzer_indicaties" EntityType="Self.series_kijkwijzer_indicaties" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [series_kijkwijzer_indicaties].[serie_id] AS [serie_id], 
+    [series_kijkwijzer_indicaties].[indicatie] AS [indicatie]
+    FROM [dbo].[series_kijkwijzer_indicaties] AS [series_kijkwijzer_indicaties]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="voorkeuren_kijkwijzer_indicaties" EntityType="Self.voorkeuren_kijkwijzer_indicaties" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [voorkeuren_kijkwijzer_indicaties].[voorkeur_id] AS [voorkeur_id], 
+    [voorkeuren_kijkwijzer_indicaties].[indicatie] AS [indicatie]
+    FROM [dbo].[voorkeuren_kijkwijzer_indicaties] AS [voorkeuren_kijkwijzer_indicaties]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__abbonemen__abbon__29572725" Association="Self.FK__abbonemen__abbon__29572725">
+      <End Role="abbonementen" EntitySet="abbonementen" />
+      <End Role="abbonementen_kwaliteiten" EntitySet="abbonementen_kwaliteiten" />
+    </AssociationSet>
+    <AssociationSet Name="FK__afleverin__aflev__59063A47" Association="Self.FK__afleverin__aflev__59063A47">
+      <End Role="afleveringen" EntitySet="afleveringen" />
+      <End Role="afleveringen_kwaliteiten" EntitySet="afleveringen_kwaliteiten" />
+    </AssociationSet>
+    <AssociationSet Name="FK__afleverin__aflev__5EBF139D" Association="Self.FK__afleverin__aflev__5EBF139D">
+      <End Role="afleveringen" EntitySet="afleveringen" />
+      <End Role="afleveringen_ondertitelingen" EntitySet="afleveringen_ondertitelingen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__afleverin__seizo__35BCFE0A" Association="Self.FK__afleverin__seizo__35BCFE0A">
+      <End Role="seizoenen" EntitySet="seizoenen" />
+      <End Role="afleveringen" EntitySet="afleveringen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__afleverin__volge__36B12243" Association="Self.FK__afleverin__volge__36B12243">
+      <End Role="afleveringen" EntitySet="afleveringen" />
+      <End Role="afleveringen1" EntitySet="afleveringen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_gen__film___5535A963" Association="Self.FK__films_gen__film___5535A963">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_genres" EntitySet="films_genres" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kij__film___3C69FB99" Association="Self.FK__films_kij__film___3C69FB99">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_kijk_histories" EntitySet="films_kijk_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kij__film___47DBAE45" Association="Self.FK__films_kij__film___47DBAE45">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_kijklijst_items" EntitySet="films_kijklijst_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kij__film___4E88ABD4" Association="Self.FK__films_kij__film___4E88ABD4">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_kijkwijzer_indicaties" EntitySet="films_kijkwijzer_indicaties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kij__kijk___3B75D760" Association="Self.FK__films_kij__kijk___3B75D760">
+      <End Role="kijk_histories" EntitySet="kijk_histories" />
+      <End Role="films_kijk_histories" EntitySet="films_kijk_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kij__kijkl__46E78A0C" Association="Self.FK__films_kij__kijkl__46E78A0C">
+      <End Role="kijklijst_items" EntitySet="kijklijst_items" />
+      <End Role="films_kijklijst_items" EntitySet="films_kijklijst_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_kwa__film___5AEE82B9" Association="Self.FK__films_kwa__film___5AEE82B9">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_kwaliteiten" EntitySet="films_kwaliteiten" />
+    </AssociationSet>
+    <AssociationSet Name="FK__films_ond__film___5CD6CB2B" Association="Self.FK__films_ond__film___5CD6CB2B">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_ondertitelingen" EntitySet="films_ondertitelingen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__gebruiker__abbon__276EDEB3" Association="Self.FK__gebruiker__abbon__276EDEB3">
+      <End Role="abbonementen" EntitySet="abbonementen" />
+      <End Role="gebruikers_abbonementen" EntitySet="gebruikers_abbonementen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__gebruiker__gebru__267ABA7A" Association="Self.FK__gebruiker__gebru__267ABA7A">
+      <End Role="gebruikers" EntitySet="gebruikers" />
+      <End Role="gebruikers_abbonementen" EntitySet="gebruikers_abbonementen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__genres_vo__voork__534D60F1" Association="Self.FK__genres_vo__voork__534D60F1">
+      <End Role="voorkeuren" EntitySet="voorkeuren" />
+      <End Role="genres_voorkeuren" EntitySet="genres_voorkeuren" />
+    </AssociationSet>
+    <AssociationSet Name="FK__kijk_hist__profi__398D8EEE" Association="Self.FK__kijk_hist__profi__398D8EEE">
+      <End Role="profielen" EntitySet="profielen" />
+      <End Role="kijk_histories" EntitySet="kijk_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__kijklijst__profi__4222D4EF" Association="Self.FK__kijklijst__profi__4222D4EF">
+      <End Role="profielen" EntitySet="profielen" />
+      <End Role="kijklijst_items" EntitySet="kijklijst_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__profielen__gebru__2C3393D0" Association="Self.FK__profielen__gebru__2C3393D0">
+      <End Role="gebruikers" EntitySet="gebruikers" />
+      <End Role="profielen" EntitySet="profielen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__seizoenen__serie__32E0915F" Association="Self.FK__seizoenen__serie__32E0915F">
+      <End Role="series" EntitySet="series" />
+      <End Role="seizoenen" EntitySet="seizoenen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ge__serie__571DF1D5" Association="Self.FK__series_ge__serie__571DF1D5">
+      <End Role="series" EntitySet="series" />
+      <End Role="series_genres" EntitySet="series_genres" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ki__aflev__3F466844" Association="Self.FK__series_ki__aflev__3F466844">
+      <End Role="afleveringen" EntitySet="afleveringen" />
+      <End Role="series_kijk_histories" EntitySet="series_kijk_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ki__kijk___3E52440B" Association="Self.FK__series_ki__kijk___3E52440B">
+      <End Role="kijk_histories" EntitySet="kijk_histories" />
+      <End Role="series_kijk_histories" EntitySet="series_kijk_histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ki__kijkl__440B1D61" Association="Self.FK__series_ki__kijkl__440B1D61">
+      <End Role="kijklijst_items" EntitySet="kijklijst_items" />
+      <End Role="series_kijklijst_items" EntitySet="series_kijklijst_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ki__serie__44FF419A" Association="Self.FK__series_ki__serie__44FF419A">
+      <End Role="series" EntitySet="series" />
+      <End Role="series_kijklijst_items" EntitySet="series_kijklijst_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__series_ki__serie__5070F446" Association="Self.FK__series_ki__serie__5070F446">
+      <End Role="series" EntitySet="series" />
+      <End Role="series_kijkwijzer_indicaties" EntitySet="series_kijkwijzer_indicaties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__voorkeure__profi__4AB81AF0" Association="Self.FK__voorkeure__profi__4AB81AF0">
+      <End Role="profielen" EntitySet="profielen" />
+      <End Role="voorkeuren" EntitySet="voorkeuren" />
+    </AssociationSet>
+    <AssociationSet Name="FK__voorkeure__voork__4CA06362" Association="Self.FK__voorkeure__voork__4CA06362">
+      <End Role="voorkeuren" EntitySet="voorkeuren" />
+      <End Role="voorkeuren_kijkwijzer_indicaties" EntitySet="voorkeuren_kijkwijzer_indicaties" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
