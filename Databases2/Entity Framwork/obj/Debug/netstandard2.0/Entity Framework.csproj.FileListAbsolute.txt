@@ -2,3 +2,8 @@ C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Deb
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Debug\netstandard2.0\Entity Framework.AssemblyInfoInputs.cache
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Debug\netstandard2.0\Entity Framework.AssemblyInfo.cs
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Debug\netstandard2.0\Entity Framework.csproj.CoreCompileInputs.cache
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\bin\Debug\netstandard2.0\Entity Framework.deps.json
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\bin\Debug\netstandard2.0\Entity Framework.dll
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\bin\Debug\netstandard2.0\Entity Framework.pdb
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Debug\netstandard2.0\Entity Framework.dll
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Entity Framwork\obj\Debug\netstandard2.0\Entity Framework.pdb

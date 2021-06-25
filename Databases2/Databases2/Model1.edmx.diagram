@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="netflixModel.seizoenen" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="netflixModel.series" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="netflixModel.voorkeuren" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="netflixModel.abbonementen_kwaliteiten" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="netflixModel.abbonementen_kwaliteiten" Width="1.5" PointX="4.375" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="netflixModel.afleveringen_kwaliteiten" Width="1.5" PointX="12" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="netflixModel.afleveringen_ondertitelingen" Width="1.5" PointX="12" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="netflixModel.films_genres" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />

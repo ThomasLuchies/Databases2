@@ -10,3 +10,4 @@ C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Databases2\obj\Debug\AD
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Databases2\obj\Debug\ADO.NET.csproj.CopyComplete
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Databases2\obj\Debug\Databases2.exe
 C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Databases2\obj\Debug\Databases2.pdb
+C:\Users\thoma\OneDrive\Documenten\Databases2\Databases2\Databases2\bin\Debug\System.ComponentModel.Annotations.dll
