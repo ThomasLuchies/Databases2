@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Grc816y+Po9gjXNP+bIaRscjhMliKdCKfnv9YRWWtynjEGVliw8TbknZML1aGnhTUdveiRjG9BFO5jpCeOEKYg==",
+  "dgSpecHash": "CP2IBgsX8WedmxWRFoGM4ps6/TbS/598yzwQ3gCtY6ZvrHaAkajlbJHdcymw2Yp66fPoX83AnKcOk1PdTDsBwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\thoma\\OneDrive\\Documenten\\Databases2\\Databases2\\Entity Framwork\\Entity Framework.csproj",
   "expectedPackageFiles": [
@@ -137,8 +137,7 @@
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\netstandard.library.ref\\2.1.0\\netstandard.library.ref.2.1.0.nupkg.sha512"
+    "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

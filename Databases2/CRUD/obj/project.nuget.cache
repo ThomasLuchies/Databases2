@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qmCvWeZNMDAQGe6AExyzXkiiiD7NobQbCIwaDuvankrGGFLQ56q1neVw7q5t92UKJH6KYIrJM7F8iulRcQt6wQ==",
+  "dgSpecHash": "OdSp/28LRkGRj/tv52NOnFxPw757dZXNW+aCu/Hp4asfPb4jdnwdI0Xm5l+WPb5Ogtfh17RCtPrGgN6dozpf1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\thoma\\OneDrive\\Documenten\\Databases2\\Databases2\\CRUD\\CRUD.csproj",
   "expectedPackageFiles": [
@@ -116,8 +116,9 @@
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.24\\microsoft.netcore.app.host.win-x64.3.1.24.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": [
     {
